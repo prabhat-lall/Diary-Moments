@@ -17,4 +17,10 @@ interface NotesDao {
 
     @Update
     fun updateNotes(notes: Notes )
+
+    @Query("SELECT * FROM Notes ORDER BY id DESC")
+    fun sortByDESC(): LiveData<List<Notes>>
+
+    @Query("SELECT * FROM Notes ORDER BY id")
+    fun sortByASC(): LiveData<List<Notes>>
 }

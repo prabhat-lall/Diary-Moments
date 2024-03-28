@@ -12,19 +12,44 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_editNotesFragment"
-            app:destination="@id/editNotesFragment" />
+            app:destination="@id/editNotesFragment"/>
         <action
             android:id="@+id/action_homeFragment_to_createNotesFragment"
             app:destination="@id/createNotesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_faqFragment"
+            app:destination="@id/faqFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_lockFragment"
+            app:destination="@id/lockFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chooseThemeFragment"
+            app:destination="@id/chooseThemeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileSettingFragment"
+            app:destination="@id/profileSettingFragment" />
     </fragment>
     <fragment
         android:id="@+id/createNotesFragment"
         android:name="com.example.mynotes.CreateNotesFragment"
         android:label="fragment_create_notes"
         tools:layout="@layout/fragment_create_notes" >
-        <action
-            android:id="@+id/action_createNotesFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/editNotesFragment"
@@ -33,9 +58,112 @@
         tools:layout="@layout/fragment_edit_notes" >
         <action
             android:id="@+id/action_editNotesFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"/>
         <argument
             android:name="data"
             app:argType="com.example.mynotes.model.Notes" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.mynotes.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.mynotes.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="com.example.mynotes.ui.faq.FaqFragment"
+        android:label="fragment_faq"
+        tools:layout="@layout/fragment_faq" >
+        <action
+            android:id="@+id/action_faqFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lockFragment"
+        android:name="com.example.mynotes.ui.lockfeature.LockFragment"
+        android:label="fragment_lock"
+        tools:layout="@layout/fragment_lock" >
+
+        <action
+            android:id="@+id/action_lockFragment_to_homeFragment"
+            app:destination="@id/homeFragment"/>
+        <action
+            android:id="@+id/action_lockFragment_to_setLockFragment"
+            app:destination="@id/setLockFragment" />
+        <action
+            android:id="@+id/action_lockFragment_to_securityQuestionFragment"
+            app:destination="@id/securityQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/themeFragment"
+        android:name="com.example.mynotes.ThemeFragment"
+        android:label="fragment_theme"
+        tools:layout="@layout/fragment_theme" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/chooseThemeFragment"
+        android:name="com.example.mynotes.ChooseThemeFragment"
+        android:label="fragment_choose_theme"
+        tools:layout="@layout/fragment_choose_theme" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/setLockFragment"
+        android:name="com.example.mynotes.ui.lockfeature.SetLockFragment"
+        android:label="fragment_set_lock"
+        tools:layout="@layout/fragment_set_lock" >
+        <action
+            android:id="@+id/action_setLockFragment_to_lockFragment"
+            app:destination="@id/lockFragment" />
+        <action
+            android:id="@+id/action_setLockFragment_to_securityQuestionFragment"
+            app:destination="@id/securityQuestionFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/securityQuestionFragment"
+        android:name="com.example.mynotes.ui.lockfeature.SecurityQuestionFragment"
+        android:label="fragment_security_question"
+        tools:layout="@layout/fragment_security_question" >
+        <action
+            android:id="@+id/action_securityQuestionFragment_to_lockFragment"
+            app:destination="@id/lockFragment"
+            app:popUpTo="@id/homeFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.mynotes.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_profileSettingFragment"
+            app:destination="@id/profileSettingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.mynotes.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.mynotes.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/profileSettingFragment"
+        android:name="com.example.mynotes.ProfileSettingFragment"
+        android:label="ProfileSettingFragment" />
 </navigation>

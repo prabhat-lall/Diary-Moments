@@ -1,5 +1,38 @@
 <resources>
-    <string name="app_name">MyNotes</string>
+    <string name="app_name">Diary Moments</string>
+    <!--    <string name="app_name">Diary : Thought Canvas</string>-->
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="share_subject">"I've been using Thought Canvas Diary to capture my thoughts and cherished memories. Join me in this journey. Download the app here: Android: https://www.indusappstore.com/"</string>
+    <string name="save">SAVE</string>
+    <string name="security_question">Security Question</string>
+    <string name="tv_fav_quest">What is your favourite color?</string>
+    <string name="please_input_your_answer">Please input your answer</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="diary_lock">Diary Lock</string>
+    <string name="set_diary_lock">Set Diary Lock</string>
+    <string name="set_a_password_to_protect_your_diary">Set a password to protect your diary</string>
+    <string name="set_or_change_your_password">Set or change your password</string>
+    <string name="set_password">Set Password</string>
+    <string name="set_sec_q">Set Security Question</string>
+    <string name="set_sec_q_desc">It will be used in case you forget your password</string>
+    <string name="set_security_q_desc">Please set a Security question in case you forget your password</string>
+    <string name="set_diary_password">Set Diary password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="re_enter_password">Re-enter Password</string>
+    <string name="unlock_your_inner_world_with_every_entry">Unlock Your Inner World with Every Entry.</string>
+    <string name="you_are_never_too_old_to_set_another_goal_or_to_dream_a_new_dream">\"You are never too old to set another goal or to dream a new dream.\"</string>
+    <string name="c_s_lewis">— C.S. Lewis</string>
+    <string name="no_of_diary">Number of diary : %s</string>
+
+
+    // spinner options
+    <string-array name="Questions">
+        <item>What is your favourite movie</item>
+        <item>What is your favourite food</item>
+        <item>What is your favourite color</item>
+    </string-array>
 </resources>

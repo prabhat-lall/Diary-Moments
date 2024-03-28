@@ -5,15 +5,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_notes_item"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#9E9E9E"
-        app:cardCornerRadius="10dp">
-        <LinearLayout
-            android:layout_margin="10dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="4dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_item_notes"
+            android:background="@color/bg_item_notes"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/notes_name"
@@ -22,7 +27,10 @@
                 android:text="NotesAppMvvm"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
             <TextView
                 android:id="@+id/notes_description"
                 android:layout_width="match_parent"
@@ -30,16 +38,36 @@
                 android:text="My name is khan"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:textStyle="italic"/>
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:maxLines="2"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notes_name"/>
             <TextView
                 android:id="@+id/notes_date"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="23 Jan 2023"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
-        </LinearLayout>
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/iv_moods_emoji"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/emojiset1_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/notes_date"
+                app:layout_constraintBottom_toBottomOf="@id/notes_date"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

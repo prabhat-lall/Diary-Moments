@@ -3,9 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/baseline_search_24"
+        app:actionViewClass="android.widget.SearchView"
+        android:iconTint="@color/white"
+        android:title="Search"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_sort"
+        android:icon="@drawable/baseline_sort_24"
+        android:iconTint="@color/white"
+        android:title="Sort"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/menu_delete"
         android:icon="@drawable/baseline_delete_24"
         android:iconTint="@color/white"
         android:title="Delete"
         app:showAsAction="always" />
+
 </menu>

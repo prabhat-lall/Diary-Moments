@@ -21,4 +21,9 @@ class NotesRepository(private val dao: NotesDao) {
     fun updateNotes(notes: Notes){
         dao.updateNotes(notes)
     }
+
+    fun sortByIdDesc() : LiveData<List<Notes>> = dao.sortByDESC()
+
+    fun sortByIdAsc() : LiveData<List<Notes>> = dao.sortByASC()
+
 }

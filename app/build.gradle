@@ -8,21 +8,22 @@ plugins {
 apply plugin: "androidx.navigation.safeargs.kotlin"
 android {
     namespace 'com.example.mynotes'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.mynotes"
         minSdk 24
         targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -44,6 +45,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.0'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
@@ -71,4 +73,19 @@ dependencies {
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+
+    //viewPager 2
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    //text to pdf
+    implementation 'com.itextpdf:itextg:5.5.10' // or latest version
+    //implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+
+    //Biometric
+    implementation 'androidx.biometric:biometric-ktx:1.2.0-alpha05'
+    implementation 'com.github.fornewid:neumorphism:0.2.1'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+
 }

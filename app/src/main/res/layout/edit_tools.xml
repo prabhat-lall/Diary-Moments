@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/statusBarColor"
+    android:orientation="horizontal"
+    android:layout_gravity="bottom"
+    android:fitsSystemWindows="true"
+    android:layout_alignParentBottom="true"
+    android:padding="10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_select_photo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/baseline_image_24"
+        android:layout_gravity="center" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_select_photo1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/baseline_image_24"
+        android:layout_gravity="center" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_select_photo2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/baseline_image_24"
+        android:layout_gravity="center" />
+
+
+
+
+</LinearLayout>

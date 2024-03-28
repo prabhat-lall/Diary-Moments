@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="statusBarColor">#210119</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="background_100">#09486E</color>
+    <color name="background_200">#749A1A</color>
+    <color name="background_300">#708C2D</color>
+    <color name="background_400">#130020</color>
+    <color name="background_500">#131c2b</color>
+<!--    <color name="background_200">#e3efc3</color>-->
+
+
+
+
+    <color name="bg_item_notes">#203150</color>
+
+
 </resources>

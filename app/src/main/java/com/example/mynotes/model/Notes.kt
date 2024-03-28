@@ -9,9 +9,10 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "Notes")
 class Notes(
     @PrimaryKey(autoGenerate = true)
-    var id:Int? =null,
-    var title:String,
-    var subTitle:String,
+    var id: Int? = null,
+    var title: String,
+    var subTitle: String,
     var notes: String,
+    var moodsEmojiId: Int,
     var date: String
-    ) : Parcelable
+) : Parcelable
