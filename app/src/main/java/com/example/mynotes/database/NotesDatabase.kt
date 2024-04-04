@@ -21,8 +21,8 @@ abstract class NotesDatabase : RoomDatabase() {
             }
             synchronized(this){
                 val roomDatabaseInstance = Room.databaseBuilder(context,NotesDatabase::class.java,"Notes").
-                    allowMainThreadQueries() // Not recommended for production
-                    .build()
+                    //allowMainThreadQueries() //Todo Prabhat remove Not recommended for production
+                    build()
                 INSTANCE = roomDatabaseInstance
                 return roomDatabaseInstance
             }

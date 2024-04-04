@@ -12,7 +12,7 @@ class PasswordManager(val context: Context) {
 
     private var prefs = context.getSharedPreferences(PREFS_PASS_KEY_FILE,Context.MODE_PRIVATE)
 
-    fun savePassword(password:String,answer:String){
+    fun savePassword(password:String){
         val editor = prefs.edit()
         editor.putString(USER_PASSWORD,password)
         editor.apply()

@@ -1,20 +1,20 @@
 package com.example.mynotes.ui.login
 
+import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
-import android.view.animation.Animation.AnimationListener
 import android.view.animation.ScaleAnimation
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.mynotes.R
 import com.example.mynotes.databinding.FragmentLoginBinding
 import com.example.mynotes.ui.MainActivity
@@ -33,22 +33,55 @@ class LoginFragment : Fragment() {
 
     private lateinit var periodicAnimation: Runnable
 
+//    private lateinit var imageView: ImageView
+//    private val imageResources = arrayOf(
+//        R.drawable.baseline_lock_24,
+//        R.drawable.baseline_fingerprint_24
+//    )
+//    private var currentIndex = 0
+//    private lateinit var imageChanger: Runnable
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         passwordManager = PasswordManager(requireContext())
-        Toast.makeText(requireContext(), "${passwordManager.isLockOn()}", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(requireContext(), "${passwordManager.isLockOn()}", Toast.LENGTH_SHORT).show()
         binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //imageView = binding.lockIconImageView
+
+        // Start the loop to change images
+       // startImageLoop()
         setListeners()
         setZoomInZoomOutAnimation()
         biometricFingerPrintLock()
     }
+
+    private fun startImageLoop() {
+        // Create a Runnable to change the image
+        val imageChanger = object : Runnable {
+            override fun run() {
+//                // Set the next image
+//                imageView.setImageResource(imageResources[currentIndex])
+//
+//                // Increment index for the next image
+//                currentIndex = (currentIndex + 1) % imageResources.size
+//
+//                // Delay for next image change (in milliseconds)
+//                val delayMillis = 2000 // Change this value to adjust the delay
+//                imageView.postDelayed(this, delayMillis.toLong())
+            }
+        }
+
+        // Start the loop by posting the Runnable
+//        imageView.post(imageChanger)
+    }
+
 
     private fun biometricFingerPrintLock() {
         if (passwordManager.isBiometricLockOn()) {
@@ -58,24 +91,24 @@ class LoginFragment : Fragment() {
 
                     override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                         super.onAuthenticationSucceeded(result)
-                        Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(requireActivity(), MainActivity::class.java))
                         requireActivity().finish()
                     }
 
                     override fun onAuthenticationFailed() {
                         super.onAuthenticationFailed()
-                        Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
+                       // Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
 
                     }
 
                     override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
                         super.onAuthenticationError(errorCode, errString)
-                        Toast.makeText(
-                            requireContext(),
-                            "${errorCode.toString()} -> ${errString.toString()}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+//                        Toast.makeText(
+//                            requireContext(),
+//                            "${errorCode.toString()} -> ${errString.toString()}",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
 
                     }
                 }
@@ -128,12 +161,12 @@ class LoginFragment : Fragment() {
     }
 
     private fun setListeners() {
-        val pass = binding.passwordEditText.text
-
         binding.unlockButton.setOnClickListener {
-            if (pass.toString().isNullOrEmpty()) {
+          //  showProgressDialog(requireContext(),"checking rkjnfinrfjr")
+            val pass = binding.passwordEditText.text.toString()
+            if (pass.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill password", Toast.LENGTH_SHORT).show()
-            } else if (pass.toString() == passwordManager.getPassword()) {
+            } else if (pass == passwordManager.getPassword()) {
                 startActivity(Intent(requireActivity(), MainActivity::class.java))
                 requireActivity().finish()
             } else {
@@ -147,5 +180,30 @@ class LoginFragment : Fragment() {
 
     }
 
+    private fun showProgressDialog(context: Context?, message: String?) {
+        var mProgressDialog: ProgressDialog? = null
+
+        if (context == null) return
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            return
+        }
+        mProgressDialog = ProgressDialog(context)
+        try {
+            // mProgressDialog.setIcon(R.drawable.paytm_logo);
+            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER)
+            mProgressDialog.setMessage(message)
+            mProgressDialog.setCancelable(false)
+            mProgressDialog.setCanceledOnTouchOutside(false)
+            mProgressDialog.show()
+        } catch (e: IllegalArgumentException) {
+
+        } catch (e: Exception) {
+        }
+    }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        // Remove the callbacks to prevent memory leaks
+//        imageView.removeCallbacks(imageChanger)
+//    }
 
 }

@@ -35,10 +35,10 @@ class SettingFragment : Fragment() {
 
         binding.switchOnForTheme.setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked){
-                Toast.makeText(requireContext(),"ON", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(requireContext(),"ON", Toast.LENGTH_SHORT).show()
                 passwordManager.setAutoThemeOn(true)
             }else{
-                Toast.makeText(requireContext(),"OFF", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(requireContext(),"OFF", Toast.LENGTH_SHORT).show()
                 passwordManager.setAutoThemeOn(false)
             }
         }

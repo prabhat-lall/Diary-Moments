@@ -105,6 +105,9 @@
         <action
             android:id="@+id/action_lockFragment_to_securityQuestionFragment"
             app:destination="@id/securityQuestionFragment" />
+        <action
+            android:id="@+id/action_lockFragment_to_setLockFragmentSecond"
+            app:destination="@id/setLockFragmentSecond" />
     </fragment>
     <fragment
         android:id="@+id/themeFragment"
@@ -125,9 +128,9 @@
         android:name="com.example.mynotes.ui.lockfeature.SetLockFragment"
         android:label="fragment_set_lock"
         tools:layout="@layout/fragment_set_lock" >
-        <action
-            android:id="@+id/action_setLockFragment_to_lockFragment"
-            app:destination="@id/lockFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_setLockFragment_to_lockFragment"-->
+<!--            app:destination="@id/lockFragment" />-->
         <action
             android:id="@+id/action_setLockFragment_to_securityQuestionFragment"
             app:destination="@id/securityQuestionFragment" />
@@ -166,4 +169,9 @@
         android:id="@+id/profileSettingFragment"
         android:name="com.example.mynotes.ProfileSettingFragment"
         android:label="ProfileSettingFragment" />
+    <fragment
+        android:id="@+id/setLockFragmentSecond"
+        android:name="com.example.mynotes.ui.lockfeature.SetLockFragmentSecond"
+        android:label="fragment_set_lock_second"
+        tools:layout="@layout/fragment_set_lock_second" />
 </navigation>

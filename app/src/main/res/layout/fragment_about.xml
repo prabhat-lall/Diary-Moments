@@ -61,9 +61,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Diary..."
+            android:text="Diary Moments"
             android:textColor="@color/white"
-            android:textSize="60sp"
+            android:fontFamily="@font/dancing_script"
+            android:textSize="24sp"
             android:textStyle="bold|italic"/>
     </LinearLayout>
 
@@ -74,13 +75,13 @@
         app:layout_constraintEnd_toEndOf="@id/tv_diary_text"
         app:layout_constraintStart_toStartOf="@id/tv_diary_text"
         app:layout_constraintTop_toBottomOf="@id/tv_diary_text"
-        android:padding="20dp"
         app:neumorph_shapeType="flat">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/unlock_your_inner_world_with_every_entry"
             android:textColor="@color/white"
+            android:fontFamily="@font/dancing_script"
             android:textSize="14sp" />
 
     </LinearLayout>

@@ -6,23 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.example.mynotes.R
-import com.example.mynotes.databinding.FragmentSetLockBinding
+import com.example.mynotes.databinding.FragmentSetLockSecondBinding
 import com.example.mynotes.utils.PasswordManager
 
 
-class SetLockFragment : Fragment() {
-
-    lateinit var binding: FragmentSetLockBinding
+class SetLockFragmentSecond : Fragment() {
+    lateinit var binding: FragmentSetLockSecondBinding
     lateinit var passwordManager: PasswordManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSetLockBinding.inflate(layoutInflater, container, false)
+        binding = FragmentSetLockSecondBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -30,13 +27,11 @@ class SetLockFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         passwordManager = PasswordManager(requireContext())
         clickListeners()
-
     }
 
     private fun clickListeners() {
 
         binding.ivClose.setOnClickListener {
-            //Navigation.findNavController(requireView()).popBackStack()
             findNavController().popBackStack()
         }
 
@@ -55,10 +50,9 @@ class SetLockFragment : Fragment() {
                         "PassWord Saved Successfully",
                         Toast.LENGTH_SHORT
                     ).show()
-                    val bundle = Bundle()
-                    bundle.putString("NEW_PASSWORD",pass.toString())
-                    Navigation.findNavController(requireView())
-                        .navigate(R.id.action_setLockFragment_to_securityQuestionFragment,bundle)
+                    passwordManager.savePassword(pass.toString().trim())
+                    passwordManager.saveLockOn(true)
+                    findNavController().popBackStack()
                 }
             } else if (pass.isNullOrEmpty() && !ans.isNullOrEmpty()) {
                 Toast.makeText(requireContext(), "Please Fill PassWord", Toast.LENGTH_SHORT).show()
@@ -69,5 +63,4 @@ class SetLockFragment : Fragment() {
             }
         }
     }
-
 }

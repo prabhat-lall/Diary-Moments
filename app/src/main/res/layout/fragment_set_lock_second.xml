@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_100"
-    tools:context=".ui.lockfeature.SecurityQuestionFragment">
+    tools:context=".ui.lockfeature.SetLockFragmentSecond">
 
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_close"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
         android:src="@drawable/baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_sec_quest"
+        android:id="@+id/tv_set_diary_lock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="Set Security Question"
+        android:text="@string/set_diary_password"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -31,70 +31,75 @@
         app:layout_constraintStart_toEndOf="@id/iv_close"
         app:layout_constraintTop_toTopOf="@id/iv_close" />
 
-    <TextView
-        android:id="@+id/tv_fav_quest"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/set_security_q_desc"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_close"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <Spinner
-        android:id="@+id/spinner_question"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintTop_toBottomOf="@id/tv_fav_quest"
-        app:layout_constraintEnd_toEndOf="@id/tv_fav_quest"
-        app:layout_constraintStart_toStartOf="@id/tv_fav_quest" />
-
-
     <LinearLayout
-        android:id="@+id/passwordInputLayout"
+        android:id="@+id/ll_input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/transparent_login_button"
-        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_question">
+        app:layout_constraintTop_toBottomOf="@id/iv_close">
 
-        <EditText
-            android:id="@+id/et_answer"
-            android:layout_width="0dp"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:hint="@string/please_input_your_answer"
+            android:hint="@string/enter_password"
             android:inputType="textPassword"
             android:padding="12dp"
             android:textColor="@android:color/white"
-            android:textColorHint="@android:color/darker_gray" />
+            android:textColorHint="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_confirm_answer"
+    <LinearLayout
+        android:id="@+id/ll_input_password_again"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/passwordInputLayout"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/transparent_login_button"
-        android:text="@string/confirm"
-        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordInputLayout" />
+        app:layout_constraintTop_toBottomOf="@id/ll_input_password">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="@string/re_enter_password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_pass" />
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_margin="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/transparent_login_button"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_input_password_again" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -149,7 +149,7 @@ class ProfileSettingFragment : Fragment(),
         }
 
         imageUri = createImageUri()!!
-        Log.d("_prabhat", "HomeFragment:$imageUri ")
+        Log.d("_prabhat", "HomeFragmenthgygyg:$imageUri ")
         binding.ivProfile.setImageURI(imageUri)
         binding.ivProfileClick.setOnClickListener {
            // imageContractForCamera.launch(imageUri)

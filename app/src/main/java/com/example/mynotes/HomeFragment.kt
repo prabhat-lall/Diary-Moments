@@ -95,7 +95,7 @@ class HomeFragment : Fragment() {
         // Restore scroll position if savedInstanceState is not null
 
         setUpAdapter()
-        checkPermissions()
+        //checkPermissions()
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             checkPermissionsForPostNotification()
         }
@@ -124,6 +124,8 @@ class HomeFragment : Fragment() {
         Log.d(TAG, "onViewCreated: $imgUri")
         if (imgUri != null)
             headerProfileImageView.setImageURI(imgUri)
+        else
+            headerProfileImageView.setImageResource(R.drawable.app_icon_sky)
         headerProfileImageView.clipToOutline = true
     }
 
@@ -161,7 +163,7 @@ class HomeFragment : Fragment() {
         }
         binding.materialToolbar.setNavigationOnClickListener {
             Log.d("NavigationClickListener", "Navigation icon clicked")
-            Toast.makeText(requireContext(), "Navigation clicked", Toast.LENGTH_SHORT).show()
+           // Toast.makeText(requireContext(), "Navigation clicked", Toast.LENGTH_SHORT).show()
         }
 
         headerView.findViewById<ImageView>(R.id.iv_profile).setOnClickListener {
@@ -224,8 +226,7 @@ class HomeFragment : Fragment() {
                     navigateToNotificationFragment()
                     true
                 }
-                else -> Toast.makeText(requireContext(), "Clicked Home", Toast.LENGTH_SHORT)
-                    .show() as Boolean
+                else -> true
             }
         }
     }
@@ -498,7 +499,7 @@ class HomeFragment : Fragment() {
         intervals.forEach { (timeInterval, operation) ->
             val (startTime, endTime) = timeInterval
             if (currentHour in startTime until endTime) {
-                Toast.makeText(requireContext(), "$startTime - $endTime",Toast.LENGTH_SHORT).show()
+                // Toast.makeText(requireContext(), "$startTime - $endTime",Toast.LENGTH_SHORT).show()
                 operation()
                 return
             }

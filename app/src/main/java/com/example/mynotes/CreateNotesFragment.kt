@@ -25,6 +25,7 @@ class CreateNotesFragment : Fragment() {
     private var emojiLayoutVisible : Boolean = true
     private var currentEmojiId : Int = 0
     private var isNoSelectedFromDialog = false
+    private var isBtnSaveClicked = false
 
 
     private lateinit var emojiAdapter: EmojiAdapter
@@ -72,6 +73,7 @@ class CreateNotesFragment : Fragment() {
             if(binding.edtTitle.text.toString().isNotEmpty() || binding.edtNotes.text.toString().isNotEmpty()) {
                 createNotes(it)
                 Toast.makeText(requireContext(),"Saved success fully",Toast.LENGTH_SHORT).show()
+                isBtnSaveClicked = true
             }
             findNavController().popBackStack()
 
@@ -96,10 +98,11 @@ class CreateNotesFragment : Fragment() {
                 val alertDialog = AlertDialog.Builder(context)
                 alertDialog.setTitle("Diary still not saved")
                 alertDialog.setMessage("Do you want to save ?")
-                alertDialog.setCancelable(false)
+                alertDialog.setCancelable(true)
                 alertDialog.setPositiveButton("Yes") { _, _ ->
                     createNotes(it)
                     findNavController().popBackStack()
+                    isNoSelectedFromDialog = true
                 }
                 alertDialog.setNegativeButton("No") { _, _ ->
                     isNoSelectedFromDialog = true
@@ -170,7 +173,7 @@ class CreateNotesFragment : Fragment() {
     override fun onStop() {
         super.onStop()
         Log.d(Tag, "onStop()")
-        if (!isNoSelectedFromDialog && (
+        if (!isBtnSaveClicked && !isNoSelectedFromDialog && (
                     binding.edtNotes.text.toString()
                         .isNotEmpty() || binding.edtTitle.text.toString()
                         .isNotEmpty())

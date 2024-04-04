@@ -70,6 +70,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -167,6 +168,7 @@
         android:background="@color/white"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -180,6 +182,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:clickable="true"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view_seprator"
         android:focusable="true">

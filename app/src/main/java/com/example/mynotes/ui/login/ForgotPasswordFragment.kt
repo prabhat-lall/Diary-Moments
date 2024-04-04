@@ -44,7 +44,7 @@ class ForgotPasswordFragment : Fragment() {
         }
 
         binding.ivClose.setOnClickListener {
-            Toast.makeText(requireContext(),"back button placed",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(requireContext(),"back button placed",Toast.LENGTH_SHORT).show()
             findNavController().popBackStack()
         }
     }
